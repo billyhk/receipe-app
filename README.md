@@ -4,7 +4,7 @@
 
 My app is called "i’m hungry". It’s a recipe app for people who don’t know what to eat, and don’t feel like flipping through all those bulky cookbooks. The user can search for a food by name, and the page is populated with the images of the search results. When the user clicks on an image, the the page shows information about the food, including a description, a list of ingredients, and step-by-step directions. In the future, I would like to add an advanced search feature so users can filter search results based on dietary restrictions, rating, and average price.
 
-## Sketches
+## Wireframes
 
 **Home Page**  
 ![Home Page](/readMe-images/wireframes/wireframe-home-page.png)  
