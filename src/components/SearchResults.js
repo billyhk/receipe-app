@@ -12,7 +12,7 @@ const [recipeId, setRecipeId] = useState(0, '');
 	}
 	return (
 		<div className='gallery'>
-			{images.map((image) => (
+			{images.map((image, i) => (
                 <Link to={"/recipe-information/" + image.title}>
 				<div key={image.id} className='image' onClick={() => {
                     const newRecipeId = image.id;

@@ -13,7 +13,7 @@ function App() {
 		key: process.env.REACT_APP_SPOONACULAR_KEY,
 		limit: 25,
 		api: 'https://api.spoonacular.com/recipes/',
-		endpointBySearch: 'search',
+		endpointBySearch: 'complexSearch',
 	};
 
 	//set state

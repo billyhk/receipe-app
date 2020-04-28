@@ -1,23 +1,5 @@
 import React, { useState, useEffect } from 'react';
 
-/*
-like a componentDidMount(){}...
-
-  	// useEffect(() => {
-	//   getRecipeInformation(recipeId)
-	// }, [])
-
-
-   grab info...
-
-   cuisine
-   prep duration
-   summary
-   ingredients
-   instructions 
-
-  */
-
 function RecipeInformation(props) {
 	const [thisRecipe, setThisRecipe] = useState('');
 
@@ -36,51 +18,42 @@ function RecipeInformation(props) {
 		// eslint-disable-next-line
 	}, []);
 
-	if (!thisRecipe) {
+	if (
+		!thisRecipe.extendedIngredients ||
+		!thisRecipe.cuisines ||
+		!thisRecipe.analyzedInstructions
+	) {
 		return 'loading...';
 	}
-	console.log(thisRecipe.extendedIngredients);
-	//
-	//     for(let i = 0; i < thisRecipe.extendedIngredients.length; i++) {
-	// console.log(thisRecipe.extendedIngredients[i])
-	//     }
-
 	return (
 		<>
 			<img alt={thisRecipe.title} src={thisRecipe.image} />
 
-			<h2>{thisRecipe.title}</h2>
+			<h2 className='recipe-title'>{thisRecipe.title}</h2>
 
-			{Array.of(thisRecipe.cuisines).map((item, i) => (
-				<p>{item}</p>
-			))}
+			<ul className='cuisines'>
+				{thisRecipe.cuisines.map((item, i) => (
+					<li key={i}>{`\u00b7${item}\u00b7`}</li>
+				))}
+			</ul>
 
-			<p>
-				<strong>Prep Duration:</strong> {thisRecipe.readyInMinutes} minutes
-			</p>
+			<p>Ready in {thisRecipe.readyInMinutes} minutes</p>
 
-			<h4>Ingedients</h4>
+			<h3>Ingredients</h3>
+			<ul>
+				{thisRecipe.extendedIngredients.map((item, i) => (
+					<li key={i}>{item.original}</li>
+				))}
+			</ul>
 
-			{/* {Array.of(thisRecipe.extendedIngredients).map((item, i) => (
-                <p>{item}</p>
-                ))} */}
-
-			<h4>Instructions</h4>
-			<div
-				dangerouslySetInnerHTML={{
-					__html: thisRecipe.instructions,
-				}}
-			/>
+			<h3>Instructions</h3>
+			<ol>
+				{thisRecipe.analyzedInstructions[0].steps.map((item, i) => (
+					<li key={i}>{item.step}</li>
+				))}
+			</ol>
 		</>
 	);
 }
-
-/*
-
-for(let i = 0; i < thisRecipe.analyzedInstructions)
-analyzedInstructions[i].steps.step
-
-
-*/
 
 export default RecipeInformation;

@@ -1,0 +1,17 @@
+.subtitle {
+    padding-left: 15px;
+}
+
+.recipe-title {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.cuisines {
+    text-align: center;
+    list-style: none;
+}
+
+footer{
+    text-align: center;
+}
