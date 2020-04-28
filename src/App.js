@@ -18,7 +18,7 @@ function App() {
 
 	//set state
 	const [images, setImages] = useState([]);
-	const [searchString, setSearchString] = useState('tiramisu');
+	const [searchString, setSearchString] = useState('chocolate');
 	const [lastSearch, setLastSearch] = useState('');
 	const [recipeId, setRecipeId] = useState(0, '');
 

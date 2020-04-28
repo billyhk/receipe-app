@@ -13,7 +13,7 @@ like a componentDidMount(){}...
 
    cuisine
    prep duration
-   description
+   summary
    ingredients
    instructions 
 
@@ -27,8 +27,7 @@ function RecipeInformation(props) {
 	fetch(url)
 		.then((response) => response.json())
 		.then((response) => {
-    		// getRecipeInformation(response);
-            console.log('response.title:', response.title, '\nresponse.summary\n', response.summary)
+            console.log('response.title:\n', response.title, '\nresponse.summary\n', response.summary)
 		})
 		.catch(console.error);
 
