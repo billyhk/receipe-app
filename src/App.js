@@ -24,6 +24,7 @@ function App() {
 
 	useEffect(() => {
 		getImages(searchString);
+		// eslint-disable-next-line
 	}, []);
 
 	function getImages(searchString) {
@@ -47,11 +48,11 @@ function App() {
 		getImages(searchString);
 	}
 
-  // update state of recipeId with new value from child SearchResults
+	// update state of recipeId with new value from child SearchResults
 	function handleImageClick(recipeId) {
 		setRecipeId(recipeId);
-  }
-  
+	}
+
 	return (
 		<>
 			<header>
@@ -82,8 +83,8 @@ function App() {
 						return (
 							<RecipeInformation
 								match={routerProps.match}
-                recipeId={recipeId}
-                searchOptions={searchOptions}
+								recipeId={recipeId}
+								searchOptions={searchOptions}
 							/>
 						);
 					}}

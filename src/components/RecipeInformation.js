@@ -27,22 +27,28 @@ function RecipeInformation(props) {
 			.then((response) => response.json())
 			.then((response) => {
 				setThisRecipe(response);
-				console.log(response);
 			})
 			.catch(console.error);
 	}
 
 	useEffect(() => {
 		getThisRecipe();
-		// eslint-disable-next-line;
+		// eslint-disable-next-line
 	}, []);
 
 	if (!thisRecipe) {
 		return 'loading...';
 	}
+	console.log(thisRecipe.extendedIngredients);
+	//
+	//     for(let i = 0; i < thisRecipe.extendedIngredients.length; i++) {
+	// console.log(thisRecipe.extendedIngredients[i])
+	//     }
+
 	return (
 		<>
-			<img src={thisRecipe.image} />
+			<img alt={thisRecipe.title} src={thisRecipe.image} />
+
 			<h2>{thisRecipe.title}</h2>
 
 			{Array.of(thisRecipe.cuisines).map((item, i) => (
@@ -52,7 +58,7 @@ function RecipeInformation(props) {
 			<p>
 				<strong>Prep Duration:</strong> {thisRecipe.readyInMinutes} minutes
 			</p>
-            
+
 			<h4>Ingedients</h4>
 
 			{/* {Array.of(thisRecipe.extendedIngredients).map((item, i) => (
@@ -60,12 +66,21 @@ function RecipeInformation(props) {
                 ))} */}
 
 			<h4>Instructions</h4>
-			<div dangerouslySetInnerHTML={{ __html: thisRecipe.instructions }} />
+			<div
+				dangerouslySetInnerHTML={{
+					__html: thisRecipe.instructions,
+				}}
+			/>
 		</>
 	);
 }
 
-/* <h4>Recipe Summary</h4> */
+/*
 
-/* <div dangerouslySetInnerHTML={{ __html: thisRecipe.summary }} /> */
+for(let i = 0; i < thisRecipe.analyzedInstructions)
+analyzedInstructions[i].steps.step
+
+
+*/
+
 export default RecipeInformation;
