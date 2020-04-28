@@ -4,6 +4,7 @@ import SearchHeader from './SearchHeader';
 import SearchResults from './SearchResults'
 
 function Home (props) {
+	console.log(props)
 	// console.log('home props.recipeId', props.recipeId)
 	return (
 		<>
@@ -16,7 +17,8 @@ function Home (props) {
 			<SearchResults 
 			images={props.images} 
 			handleClick={props.handleImageClick}
-			recipeId={props.recipeId}/>
+			recipeId={props.recipeId}
+			/>
 			</section>
 		</>
 	);

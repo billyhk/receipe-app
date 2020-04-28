@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react'
 
 const SearchResults = ( {handleClick, images} ) => {
+	
 const [recipeId, setRecipeId] = useState(0, '');
 
 
 	if (!images.length) {
 		return <h2>No Recipes Found!</h2>;
 	}
-    console.log('images', images);
 	return (
 		<div className='gallery'>
 			{images.map((image) => (
@@ -26,6 +26,7 @@ const [recipeId, setRecipeId] = useState(0, '');
 			))}
 		</div>
 	);
+	
 };
 
 export default SearchResults;
