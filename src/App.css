@@ -91,7 +91,7 @@ button {
 	margin: 0 auto;
 	margin-bottom: 40px;
 
-	width: 100%;
+	max-width: 75%;
 	height: auto;
 }
 
