@@ -1,21 +1,29 @@
 .subtitle {
-    padding-left: 15px;
+	padding-left: 15px;
 }
 
-.last-search{
-    font-weight: 800;
+input {
+	text-align: center;
+}
+
+.last-search {
+	font-weight: 800;
 }
 
 .recipe-title {
-    text-align: center;
-    font-size: 2rem;
+	text-align: center;
+	font-size: 2rem;
 }
 
 .cuisines {
-    text-align: center;
-    list-style: none;
+	text-align: center;
+	list-style: none;
 }
 
-footer{
-    text-align: center;
+footer {
+	text-align: center;
+}
+
+.no-instructions {
+	text-align: center;
 }

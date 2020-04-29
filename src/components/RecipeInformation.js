@@ -25,7 +25,7 @@ function RecipeInformation(props) {
 	) {
 		return 'loading...';
 	}
-	console.log(thisRecipe.analyzedInstructions);
+	console.log(thisRecipe);
 	return (
 		<>
 			<img alt={thisRecipe.title} src={thisRecipe.image} />
@@ -48,15 +48,18 @@ function RecipeInformation(props) {
 					))}
 				</ul>
 			</div>
+
 			{thisRecipe.analyzedInstructions.length == 0 ? (
-				<p class='no-ingredients'>Sorry, this recipe does not include directions.</p>
+				<p className='no-instructions'>
+					Sorry, this recipe does not include instructions.
+				</p>
 			) : (
 				<div className='instructions'>
 					<h3>Instructions</h3>
 					<ol>
-						{thisRecipe.analyzedInstructions[0].steps.map((item, i) => (
-							<li key={i}>{item.step}</li>
-						))}
+						{thisRecipe.analyzedInstructions.map((itemA) =>
+							itemA.steps.map((itemB, i) => <li key={i}>{itemB.step}</li>)
+						)}{' '}
 					</ol>
 				</div>
 			)}

@@ -10,7 +10,7 @@ function SearchForm(props) {
 				onChange={props.handleChange}
 				value={props.searchString}
 			/>
-			<button type='submit'>Broccoli</button>
+			<button type='submit'>show me the food.</button>
 		</form>
 	);
 }
