@@ -1,5 +1,5 @@
 {
-	"homepage": "http://billyhk.github.io",
+	"homepage": "http://billyhk.github.io/billyhk.github.io",
 	"name": "recipe-app",
 	"version": "0.1.0",
 	"private": true,
@@ -38,5 +38,8 @@
 			"last 1 firefox version",
 			"last 1 safari version"
 		]
+	},
+	"devDependencies": {
+		"gh-pages": "^2.2.0"
 	}
 }
