@@ -5,7 +5,10 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import RecipeInformation from './components/RecipeInformation';
 
+import 'bootswatch/dist/sandstone/bootstrap.min.css'; // Added this :boom:
 import './App.css';
+
+// import './App.css';
 
 function App() {
 	//construct api url
@@ -18,7 +21,7 @@ function App() {
 
 	//set state
 	const [images, setImages] = useState([]);
-	const [searchString, setSearchString] = useState('raw kale salad');
+	const [searchString, setSearchString] = useState('peanut butter');
 	const [lastSearch, setLastSearch] = useState('');
 	const [recipeId, setRecipeId] = useState(0, '');
 

@@ -4,13 +4,16 @@ function SearchForm(props) {
 	return (
 		<form onSubmit={props.handleSubmit}>
 			<input
+				className='form-control'
 				placeholder='food words...'
 				type='text'
 				name='searchString'
 				onChange={props.handleChange}
 				value={props.searchString}
 			/>
-			<button type='submit'>show me the food.</button>
+			<button type='submit' class='btn btn-secondary'>
+				show me the food.
+			</button>
 		</form>
 	);
 }

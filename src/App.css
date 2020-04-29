@@ -1,9 +1,33 @@
-.subtitle {
-	padding-left: 15px;
+body {
+	background: rgba(0, 0, 0, 0.11);
 }
 
-input {
-	text-align: center;
+header {
+	margin-top: 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 40px;
+	font-size: 0.7rem;
+}
+
+a {
+	color: rgba(58, 136, 58, 0.783);
+	font-weight: 600;
+	font-family: arial;
+	font-size: 1.2rem;
+	-webkit-transition: 0.5s;
+	transition: 0.5s;
+}
+
+a:hover {
+	color: rgba(115, 111, 176, 0.719);
+	text-decoration: none;
+}
+
+.subtitle {
+	padding-left: 15px;
+	font-size: 1rem;
 }
 
 .last-search {
@@ -20,10 +44,128 @@ input {
 	list-style: none;
 }
 
-footer {
+.no-instructions {
 	text-align: center;
 }
 
-.no-instructions {
+.no-recipes {
 	text-align: center;
+}
+.loading {
+	display: none;
+}
+.myFooter {
+	/* border-top: 2px solid rgba(128, 128, 128, 0.589); */
+	padding-bottom: 10px;
+	top: 100%;
+	text-align: center;
+	width: 100%;
+	height: 40px;
+	font-weight: 600;
+	font-family: arial;
+	padding-top: 10px;
+	font-size: 1rem;
+	color: rgb(128, 128, 128);
+}
+.search-header {
+	text-align: center;
+	font-size: 2rem;
+}
+
+form {
+	align-items: center;
+	display: flex;
+	padding: 20px;
+	padding-top: 0;
+}
+input {
+	text-align: center;
+	width: 60%;
+}
+button {
+	align-items: center;
+	width: 40%;
+}
+
+#information-image {
+	margin: 0 auto;
+	margin-bottom: 40px;
+
+	width: 100%;
+	height: auto;
+}
+
+.duration {
+	text-align: center;
+	color: rgba(0, 0, 0, 0.527);
+}
+
+.no-instructions {
+	font-style: italic;
+	font-size: 1.5rem;
+}
+
+.ingredients h3 {
+	margin-top: 20px;
+	border-bottom: 2px solid black;
+}
+.instructions h3 {
+	margin-top: 20px;
+	border-bottom: 2px solid black;
+}
+
+ul li {
+	list-style: none;
+}
+.jumbo-like {
+	background: #f8f5f0;
+	padding: 30px 40px 20px 40px;
+	margin-bottom: 15px;
+}
+
+.food-pics {
+	text-align: center;
+
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	grid-gap: 1rem;
+}
+
+@media (max-width: 600px) {
+	header {
+		display: block;
+		text-align: center;
+	}
+	.search-header {
+		font-size: 1.25rem;
+	}
+
+	.ingredients {
+		text-align: center;
+	}
+	.instructions h3 {
+		text-align: center;
+	}
+	form {
+		display: block;
+	}
+	button {
+		width: 100%;
+	}
+	.food-pics {
+		display: block;
+	}
+	.food-pics * {
+		border-radius: 25px;
+	}
+}
+
+@media (max-width: 1000px) {
+	.search-header {
+		font-size: 1.5rem;
+	}
+	header {
+		align-items: center;
+		flex-direction: row;
+	}
 }

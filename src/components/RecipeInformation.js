@@ -23,22 +23,28 @@ function RecipeInformation(props) {
 		!thisRecipe.cuisines ||
 		!thisRecipe.analyzedInstructions
 	) {
-		return 'loading...';
+		return (<p>
+			<span className='loading'>loading...</span>
+		</p>);
 	}
 	console.log(thisRecipe);
 	return (
-		<>
-			<img alt={thisRecipe.title} src={thisRecipe.image} />
+		<div className='jumbo-like'>
+			<img
+				alt={thisRecipe.title}
+				src={thisRecipe.image}
+				className='card' id='information-image'
+			/>
 
 			<h2 className='recipe-title'>{thisRecipe.title}</h2>
 
-			<ul className='cuisines'>
+			{/* <ul className='cuisines'>
 				{thisRecipe.cuisines.map((item, i) => (
 					<li key={i}>{`\u00b7${item}\u00b7`}</li>
 				))}
-			</ul>
+			</ul> */}
 
-			<p>Ready in {thisRecipe.readyInMinutes} minutes</p>
+			<h5 className='duration'>Ready in {thisRecipe.readyInMinutes} minutes</h5>
 
 			<div className='ingredients'>
 				<h3>Ingredients</h3>
@@ -63,7 +69,7 @@ function RecipeInformation(props) {
 					</ol>
 				</div>
 			)}
-		</>
+		</div>
 	);
 }
 
