@@ -1,21 +1,18 @@
 body {
 	background: rgba(0, 0, 0, 0.11);
 }
-
 header {
 	margin-top: 20px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 0 40px;
-	font-size: 0.7rem;
 }
 
 a {
 	color: rgba(58, 136, 58, 0.783);
 	font-weight: 600;
 	font-family: arial;
-	font-size: 1.2rem;
 	-webkit-transition: 0.5s;
 	transition: 0.5s;
 }
@@ -36,7 +33,6 @@ a:hover {
 
 .recipe-title {
 	text-align: center;
-	font-size: 2rem;
 }
 
 .cuisines {
@@ -89,7 +85,7 @@ button {
 
 #information-image {
 	margin: 0 auto;
-	margin-bottom: 40px; 
+	margin-bottom: 40px;
 	max-width: 75%;
 	height: auto;
 }
@@ -135,10 +131,6 @@ ul li {
 		display: block;
 		text-align: center;
 	}
-	.search-header {
-		font-size: 1.25rem;
-	}
-
 	.ingredients {
 		text-align: center;
 	}
@@ -157,14 +149,49 @@ ul li {
 	.food-pics * {
 		border-radius: 25px;
 	}
+	h1 {
+		font-size: 2rem;
+	}
+	.search-header {
+		font-size: 1.25rem;
+	}
 }
 
-@media (max-width: 1000px) {
-	.search-header {
-		font-size: 1.5rem;
+@media (min-width: 601px) {
+	h1 {
+		font-size: 2rem;
 	}
+	.search-header {
+		font-size: 1.25rem;
+	}
+}
+@media (min-width: 700px) {
+	h1 {
+		font-size: 2rem;
+	}
+	.search-header {
+		font-size: 1.25rem;
+	}
+}
+
+@media (min-width: 900px) {
 	header {
 		align-items: center;
 		flex-direction: row;
+	}
+	h1 {
+		font-size: 3rem;
+	}
+	.search-header {
+		font-size: 1.75rem;
+	}
+}
+
+@media (min-width: 1400px) {
+	h1 {
+		font-size: 4rem;
+	}
+	.search-header {
+		font-size: 2rem;
 	}
 }
