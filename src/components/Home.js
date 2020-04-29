@@ -4,7 +4,6 @@ import SearchHeader from './SearchHeader';
 import SearchResults from './SearchResults'
 
 function Home (props) {
-	// console.log('home props.recipeId', props.recipeId)
 	return (
 		<>
 			<SearchHeader lastSearch={props.lastSearch} />

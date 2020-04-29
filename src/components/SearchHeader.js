@@ -4,7 +4,7 @@ function SearchHeader(props) {
 	return (
 		<>
 			<p>
-				currently showing recipes for <strong>{props.lastSearch}</strong>
+				currently showing recipes for <span className='last-search'>{props.lastSearch}</span>
 			</p>
 		</>
 	);

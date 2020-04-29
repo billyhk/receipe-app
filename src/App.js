@@ -11,14 +11,14 @@ function App() {
 	//construct api url
 	const searchOptions = {
 		key: process.env.REACT_APP_SPOONACULAR_KEY,
-		limit: 25,
+		limit: 100,
 		api: 'https://api.spoonacular.com/recipes/',
 		endpointBySearch: 'complexSearch',
 	};
 
 	//set state
 	const [images, setImages] = useState([]);
-	const [searchString, setSearchString] = useState('pizza');
+	const [searchString, setSearchString] = useState('peanut butter and chocolate');
 	const [lastSearch, setLastSearch] = useState('');
 	const [recipeId, setRecipeId] = useState(0, '');
 

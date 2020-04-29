@@ -6,6 +6,10 @@ const SearchResults = ( {handleClick, images} ) => {
 	
 const [recipeId, setRecipeId] = useState(0, '');
 
+// console.log(images)
+	// if (!images.image) {
+	// 	return 'loading...';
+	// }
 
 	if (!images.length) {
 		return <h2>No Recipes Found!</h2>;
@@ -13,7 +17,7 @@ const [recipeId, setRecipeId] = useState(0, '');
 	return (
 		<div className='gallery'>
 			{images.map((image, i) => (
-                <Link to={"/recipe-information/" + image.title}>
+                <Link to={"/recipe-information/" + image.title} key={image.id}>
 				<div key={image.id} className='image' onClick={() => {
                     const newRecipeId = image.id;
                     setRecipeId(newRecipeId);
