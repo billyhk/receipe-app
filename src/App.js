@@ -81,7 +81,7 @@ function App() {
 					}}
 				/>
 				<Route
-					path='/:recipe-information'
+					path='/recipe-information/:title'
 					render={(routerProps) => {
 						return (
 							<RecipeInformation

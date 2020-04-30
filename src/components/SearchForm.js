@@ -11,7 +11,7 @@ function SearchForm(props) {
 				onChange={props.handleChange}
 				value={props.searchString}
 			/>
-			<button type='submit' class='btn btn-secondary'>
+			<button type='submit' className='btn btn-secondary'>
 				show me the food.
 			</button>
 		</form>

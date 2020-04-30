@@ -4,7 +4,7 @@ import { useState } from 'react'
 
 const SearchResults = ( {handleClick, images} ) => {
 	
-const [recipeId, setRecipeId] = useState(0, '');
+// const [recipeId, setRecipeId] = useState(0, '');
 
 console.log(images)
 	// if (!images.image) {
@@ -21,11 +21,7 @@ console.log(images)
 					<div
 						key={image.id}
 						className='image'
-						onClick={() => {
-							const newRecipeId = image.id;
-							setRecipeId(newRecipeId);
-							handleClick(newRecipeId);
-						}}>
+						onClick={() => handleClick(image.id)}>
 						<img
 							alt={image.title}
 							src={`https://spoonacular.com/recipeImages/${image.id}-312x231`}
