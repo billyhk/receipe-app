@@ -4,7 +4,7 @@ function RecipeInformation(props) {
 	const [thisRecipe, setThisRecipe] = useState('');
 
 	function getThisRecipe() {
-		const url = `${props.searchOptions.api}${props.recipeId}/information?apiKey=${props.searchOptions.key}`;
+		const url = `${props.searchOptions.api}${props.match.params.recipeId}/information?apiKey=${props.searchOptions.key}`;
 		fetch(url)
 			.then((response) => response.json())
 			.then((response) => {
@@ -23,17 +23,19 @@ function RecipeInformation(props) {
 		!thisRecipe.cuisines ||
 		!thisRecipe.analyzedInstructions
 	) {
-		return (<p>
-			<span className='loading'>loading...</span>
-		</p>);
+		return (
+			<p>
+				<span className='loading'>loading...</span>
+			</p>
+		);
 	}
-	console.log(thisRecipe);
 	return (
 		<div className='jumbo-like'>
 			<img
 				alt={thisRecipe.title}
 				src={thisRecipe.image}
-				className='card' id='information-image'
+				className='card'
+				id='information-image'
 			/>
 
 			<h2 className='recipe-title'>{thisRecipe.title}</h2>

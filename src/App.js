@@ -23,7 +23,6 @@ function App() {
 	const [images, setImages] = useState([]);
 	const [searchString, setSearchString] = useState('peanut butter');
 	const [lastSearch, setLastSearch] = useState('');
-	const [recipeId, setRecipeId] = useState(0, '');
 
 	useEffect(() => {
 		getImages(searchString);
@@ -51,11 +50,6 @@ function App() {
 		getImages(searchString);
 	}
 
-	// update state of recipeId with new value from child SearchResults
-	function handleImageClick(recipeId) {
-		setRecipeId(recipeId);
-	}
-	//test test
 	return (
 		<>
 			<header>
@@ -68,26 +62,22 @@ function App() {
 					render={(routerProps) => {
 						return (
 							<Home
-								match={routerProps.match}
 								images={images}
 								lastSearch={lastSearch}
 								searchString={searchString}
 								handleSubmit={handleSubmit}
 								handleChange={handleChange}
-								handleImageClick={handleImageClick}
-								recipeId={recipeId}
 							/>
 						);
 					}}
 				/>
 				<Route
-					path='/recipe-information/:title'
+					path='/recipe-information/:recipeId'
 					render={(routerProps) => {
 						return (
 							<RecipeInformation
-								match={routerProps.match}
-								recipeId={recipeId}
 								searchOptions={searchOptions}
+								{...routerProps}
 							/>
 						);
 					}}

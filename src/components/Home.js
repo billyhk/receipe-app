@@ -15,8 +15,6 @@ function Home(props) {
 			<section>
 				<SearchResults
 					images={props.images}
-					handleClick={props.handleImageClick}
-					recipeId={props.recipeId}
 				/>
 			</section>
 		</>
