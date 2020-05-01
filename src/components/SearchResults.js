@@ -23,23 +23,3 @@ const SearchResults = ({ images }) => {
 };
 
 export default SearchResults;
-
-/*
-
-https://spoonacular.com/recipeImages/15407-556x370.jpg
-
-{thisRecipe.analyzedInstructions.length == 0 ? (
-				<p className='no-instructions'>
-					Sorry, this recipe does not include instructions.
-				</p>
-			) : (
-				<div className='instructions'>
-					<h3>Instructions</h3>
-					<ol>
-						{thisRecipe.analyzedInstructions.map((itemA) =>
-							itemA.steps.map((itemB, i) => <li key={i}>{itemB.step}</li>)
-						)}{' '}
-					</ol>
-				</div>
-			)}
-*/

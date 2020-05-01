@@ -40,12 +40,6 @@ function RecipeInformation(props) {
 
 			<h2 className='recipe-title'>{thisRecipe.title}</h2>
 
-			{/* <ul className='cuisines'>
-				{thisRecipe.cuisines.map((item, i) => (
-					<li key={i}>{`\u00b7${item}\u00b7`}</li>
-				))}
-			</ul> */}
-
 			<h5 className='duration'>Ready in {thisRecipe.readyInMinutes} minutes</h5>
 
 			<div className='ingredients'>

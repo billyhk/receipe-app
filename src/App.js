@@ -5,10 +5,8 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import RecipeInformation from './components/RecipeInformation';
 
-import 'bootswatch/dist/sandstone/bootstrap.min.css'; // Added this :boom:
+import 'bootswatch/dist/sandstone/bootstrap.min.css';
 import './App.css';
-
-// import './App.css';
 
 function App() {
 	//construct api url
