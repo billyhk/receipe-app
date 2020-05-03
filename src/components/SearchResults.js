@@ -7,7 +7,7 @@ const SearchResults = ({ images }) => {
 	}
 	return (
 		<div className='food-pics'>
-			{images.map((image, i) => (
+			{images.map((image) => (
 				<Link to={'/recipe-information/' + image.id} key={image.id}>
 					<div key={image.id} className='image'>
 						<img
