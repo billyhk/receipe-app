@@ -9,18 +9,17 @@ import 'bootswatch/dist/sandstone/bootstrap.min.css';
 import './App.css';
 
 function App() {
-	//construct api url
 	const searchOptions = {
 		key: process.env.REACT_APP_SPOONACULAR_KEY,
-		limit: 100,
+		limit: 50,
 		api: 'https://api.spoonacular.com/recipes/',
 		endpointBySearch: 'complexSearch',
 	};
 
-	//set state
 	const [images, setImages] = useState([]);
 	const [searchString, setSearchString] = useState('peanut butter');
 	const [lastSearch, setLastSearch] = useState('');
+	let [offset, setOffset] = useState(0);
 
 	useEffect(() => {
 		getImages(searchString);
@@ -28,7 +27,7 @@ function App() {
 	}, []);
 
 	function getImages(searchString) {
-		const url = `${searchOptions.api}${searchOptions.endpointBySearch}?apiKey=${searchOptions.key}&query=${searchString}&number=${searchOptions.limit}`;
+		const url = `${searchOptions.api}${searchOptions.endpointBySearch}?apiKey=${searchOptions.key}&query=${searchString}&number=${searchOptions.limit}&offset=${offset}`;
 
 		fetch(url)
 			.then((response) => response.json())
@@ -38,6 +37,21 @@ function App() {
 				setSearchString('');
 			})
 			.catch(console.error);
+	}
+
+	function loadNext() {
+		let limit = searchOptions.limit;
+		let newOffset = (offset += limit);
+		setOffset(newOffset);
+		getImages(lastSearch);
+	}
+	function loadPrevious() {
+		let limit = searchOptions.limit;
+		if (offset > 0) {
+			let newOffset = (offset -= limit);
+			setOffset(newOffset);
+		}
+		getImages(lastSearch);
 	}
 
 	function handleChange(event) {
@@ -63,8 +77,12 @@ function App() {
 								images={images}
 								lastSearch={lastSearch}
 								searchString={searchString}
+								offset={offset}
+								limit={searchOptions.limit}
 								handleSubmit={handleSubmit}
 								handleChange={handleChange}
+								loadNext={loadNext}
+								loadPrevious={loadPrevious}
 							/>
 						);
 					}}

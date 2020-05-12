@@ -51,7 +51,7 @@ function RecipeInformation(props) {
 				</ul>
 			</div>
 
-			{thisRecipe.analyzedInstructions.length == 0 ? (
+			{thisRecipe.analyzedInstructions.length === 0 ? (
 				<p className='no-instructions'>
 					Sorry, this recipe does not include instructions.
 				</p>
