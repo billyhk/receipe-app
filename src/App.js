@@ -57,12 +57,14 @@ function App() {
 		nextResults = true;
 		previousResults = false;
 		getImages(lastSearch);
+		window.scrollTo(0, 0);
 	}
 	function loadPrevious() {
 		newSearch = false;
 		nextResults = false;
 		previousResults = true;
 		getImages(lastSearch);
+		window.scrollTo(0, 0);
 	}
 
 	function handleChange(event) {
