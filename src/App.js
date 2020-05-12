@@ -20,6 +20,9 @@ function App() {
 	const [searchString, setSearchString] = useState('peanut butter');
 	const [lastSearch, setLastSearch] = useState('');
 	let [offset, setOffset] = useState(0);
+	let newSearch = true;
+	let nextResults = false;
+	let previousResults = false;
 
 	useEffect(() => {
 		getImages(searchString);
@@ -27,6 +30,16 @@ function App() {
 	}, []);
 
 	function getImages(searchString) {
+		if (newSearch) {
+			offset = 0;
+			setOffset(0);
+		} else if (nextResults) {
+			setOffset((offset += searchOptions.limit));
+		} else if (previousResults) {
+			if (offset > 0) {
+				setOffset((offset -= searchOptions.limit));
+			}
+		}
 		const url = `${searchOptions.api}${searchOptions.endpointBySearch}?apiKey=${searchOptions.key}&query=${searchString}&number=${searchOptions.limit}&offset=${offset}`;
 
 		fetch(url)
@@ -40,17 +53,15 @@ function App() {
 	}
 
 	function loadNext() {
-		let limit = searchOptions.limit;
-		let newOffset = (offset += limit);
-		setOffset(newOffset);
+		newSearch = false;
+		nextResults = true;
+		previousResults = false;
 		getImages(lastSearch);
 	}
 	function loadPrevious() {
-		let limit = searchOptions.limit;
-		if (offset > 0) {
-			let newOffset = (offset -= limit);
-			setOffset(newOffset);
-		}
+		newSearch = false;
+		nextResults = false;
+		previousResults = true;
 		getImages(lastSearch);
 	}
 
@@ -59,6 +70,7 @@ function App() {
 	}
 	function handleSubmit(event) {
 		event.preventDefault();
+		newSearch = true;
 		getImages(searchString);
 	}
 
@@ -77,8 +89,9 @@ function App() {
 								images={images}
 								lastSearch={lastSearch}
 								searchString={searchString}
-								offset={offset}
 								limit={searchOptions.limit}
+								offset={offset}
+								setOffset={setOffset}
 								handleSubmit={handleSubmit}
 								handleChange={handleChange}
 								loadNext={loadNext}

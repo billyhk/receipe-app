@@ -1,18 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 function SearchHeader(props) {
+	let offset = props.offset
 	return (
 		<>
 			<p className='search-header'>
 				currently showing recipes for{' '}
 				<span className='last-search'>{props.lastSearch}</span>
 				<br />
-				<small>
-					displaying results{' '}
+				{props.images.length === 0 ? null : (<small>
+					displaying results:{' '}
 					<span className='last-search'>
-						{props.offset} - {props.limit + props.offset}
+						{offset + 1} - {offset + (props.images.length)}
 					</span>
-				</small>
+				</small>)}
 			</p>
 		</>
 	);

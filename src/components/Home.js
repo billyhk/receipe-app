@@ -10,7 +10,8 @@ function Home(props) {
 	return (
 		<>
 			<SearchHeader lastSearch={props.lastSearch} offset={props.offset}
-			limit={props.limit} />
+			limit={props.limit}
+			images={props.images} />
 			<SearchForm
 				searchString={props.searchString}
 				handleSubmit={props.handleSubmit}
