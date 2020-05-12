@@ -99,8 +99,13 @@ button {
 }
 
 #previous {
-	margin-top: 0;
+	margin-bottom: 1%;
 }
+
+#next {
+	margin-top: 1%;
+}
+
 
 #information-image {
 	margin: 0 auto;

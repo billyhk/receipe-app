@@ -20,14 +20,14 @@ const SearchResults = ({ images, offset, loadNext, loadPrevious }) => {
 					</Link>
 				))}
 			</div>
-			{images.length === 50 ? (<button onClick={loadNext} className='btn-dark' id='next'>
-				Next Recipes
-			</button>) : null}
 			{offset === 0 ? null : (
 				<button onClick={loadPrevious} className='btn-dark' id='previous'>
 					Previous Recipes
 				</button>
 			)}
+			{images.length === 50 ? (<button onClick={loadNext} className='btn-dark' id='next'>
+				Next Recipes
+			</button>) : null}
 		</div>
 	);
 };
